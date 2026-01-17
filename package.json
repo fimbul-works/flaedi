@@ -1,6 +1,6 @@
 {
   "name": "@fimbul-works/flaedi",
-  "description": "TypeScript animation engine in a kilobyte-sized package.",
+  "description": "TypeScript animation engine in a kilobyte-sized package",
   "version": "1.0.0",
   "type": "module",
   "private": false,
