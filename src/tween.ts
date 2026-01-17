@@ -19,16 +19,21 @@ function createTween(durationMs: number, easing = (t: number) => t): AnimationFu
 }
 
 /**
- * Tween a Seidr value to a target value.
- * @param {Seidr<number>} object The Seidr to tween
- * @param {number} to The target value
- * @param {number} durationMs The duration of the tween in milliseconds
- * @param {(t: number) => number} easing The easing function to use
+ * Tween an object value to a target value.
+ *
+ * @template T - Type of object
+ * @template {extends keyof T} K - Object property
+ *
+ * @param {T} object - The object to tween
+ * @param {K} property - The property name to tween
+ * @param {number} to - The target value
+ * @param {number} durationMs - The duration of the tween in milliseconds
+ * @param {(t: number) => number} easing - The easing function to use
  * @returns {() => void} A function to stop the tween
  */
-export function tween<T, K extends keyof T = keyof T, P = T[K] extends number ? number : never>(
+export function tween<T, K extends keyof T = keyof T>(
   object: T,
-  property: keyof T,
+  property: K,
   to: number,
   durationMs: number,
   easing = (t: number) => t,
