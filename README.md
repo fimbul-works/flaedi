@@ -2,6 +2,10 @@
 
 **flæði** (Old Norse for *flow*) is a high-performance, kilobyte-sized animation engine designed for the modern web. It provides a functional, promise-based approach to motion without the bloat of traditional animation libraries.
 
+[![npm version](https://badge.fury.io/js/%40fimbul-works%2Fflaedi.svg)](https://www.npmjs.com/package/@fimbul-works/flaedi)
+[![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/microsoft/TypeScript)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@fimbul-works/flaedi)](https://bundlephobia.com/package/@fimbul-works/flaedi)
+
 ## Features
 
 * **⚡ Ultra-lightweight**: Sub-1KB gzipped core for maximum performance.
