@@ -36,18 +36,27 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "rm -rf dist && pnpm build:esm && pnpm build:cjs",
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
+    "build:bundles": "tsdown",
+    "build:all": "pnpm build && pnpm build:bundles && pnpm sizes",
     "format": "npx biome format --write src",
     "test": "vitest",
+    "sizes": "npx bundle-size",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@fimbul-works/bundle-size": "link:../bundle-size",
+    "tsdown": "^0.22.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
   }
